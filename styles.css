@@ -1,0 +1,114 @@
+* {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: rgb(52, 59, 65);
+  background-color: unset;
+}
+header {
+  background-color: rgb(52, 148, 172);
+  padding: auto;
+  height: clamp(5rem, 8vh, 10rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* box-shadow: 0px 5px 5xp rgb(52, 148, 172); */
+}
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 5vw;
+  background-color: unset;
+  align-items: center;
+}
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: medium;
+  background-color: unset;
+  font-weight: 500;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+nav a:hover {
+  background-color: hsl(37, 77%, 55%);
+}
+
+nav a:active {
+  background-color: hsl(37, 77%, 65%);
+}
+
+main {
+  align-items: center;
+  height: 80dvh;
+  gap: 1rem;
+  margin: 0 auto;
+  width: auto;
+  padding: 3vw;
+  text-align: center;
+}
+.main-heading {
+  font-size: 10vw;
+}
+.startBtn {
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: hsl(37, 77%, 55%);
+  border: none;
+  cursor: pointer;
+  max-width: fit-content;
+  align-self: center;
+  color: white;
+  font-size: larger;
+  font-weight: 600;
+  text-decoration: none;
+}
+.startBtn:hover {
+  background-color: hsl(37, 77%, 55%);
+}
+
+.startBtn:active {
+  background-color: hsl(37, 77%, 65%);
+}
+.main-container {
+  background-color: white;
+  border-radius: 10px;
+  padding-inline: 8vw;
+  padding-block: 8vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+main div p {
+  background-color: white;
+}
+
+.rules-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: min(20px, 30px);
+}
+
+.rules-container h1 {
+  margin-bottom: 15px;
+  color: hsl(37, 77%, 55%);
+}
+.rules-container ul {
+  list-style: upper-roman;
+}
+.rules-container ul li {
+  margin-bottom: 10px;
+  background-color: hsl(208, 11%, 60%);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #00000056;
+  /* font-size: large; */
+}

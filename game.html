@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./game.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Mastermind Game</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="./index.html">Home</a>
+        <a
+          href="./game.html"
+          style="background-color: hsl(37, 77%, 55%); font-weight: 800"
+          >Play</a
+        >
+        <a href="./rules.html">Rules</a>
+      </nav>
+    </header>
+    <main style="display: flex; flex-direction: column">
+      <div class="container">
+        <h1>Mastermind Game</h1>
+        <div id="options">
+          <label>
+            <input type="checkbox" id="allow-duplicates" />
+            Allow duplicate colors in code
+          </label>
+          <button id="start-game">Start Game</button>
+        </div>
+        <div id="board"></div>
+        <div id="color-choices">
+          <div
+            class="color-choice"
+            style="background-color: red"
+            data-color="red"
+          ></div>
+          <div
+            class="color-choice"
+            style="background-color: green"
+            data-color="green"
+          ></div>
+          <div
+            class="color-choice"
+            style="background-color: blue"
+            data-color="blue"
+          ></div>
+          <div
+            class="color-choice"
+            style="background-color: yellow"
+            data-color="yellow"
+          ></div>
+          <div
+            class="color-choice"
+            style="background-color: orange"
+            data-color="orange"
+          ></div>
+          <div
+            class="color-choice"
+            style="background-color: purple"
+            data-color="purple"
+          ></div>
+        </div>
+        <button id="check-guess" disabled>Check</button>
+        <div id="message"></div>
+        <button id="restart">Restart Game</button>
+      </div>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>

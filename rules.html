@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>MasterMind Game</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="./index.html">Home</a>
+        <a href="./game.html">Play</a>
+        <a href="./rules.html" style="background-color: hsl(37, 77%, 55%); font-weight: 800;">Rules</a>
+      </nav>
+    </header>
+    <main>
+      <div class="rules-container">
+        <h1>Rules of The Game</h1>
+        <ul>
+          <li>
+            The computer picks a sequence of colors. The number of colors is the
+            code length.
+          </li>
+
+          <li>
+            The objective of the game is to guess the exact positions of the
+            colors in the computer's sequence.
+          </li>
+
+          <li>
+            By default, a color can be used only once in a code sequence. If you
+            start a new game with the 'Allow duplicates' checked, then any color
+            can be used any number of times in the code sequence.
+          </li>
+
+          <li>
+            After filling a line with your guesses and clicking on the 'Check'
+            button, the computer responses with the result of your guess.
+          </li>
+          <li>
+            For each color in your guess that is in the correct color and
+            correct position in the code sequence, the computer display a small
+            red color on the right side of the current guess.
+          </li>
+          <li>
+            For each color in your guess that is in the correct color but is NOT
+            in the correct position in the code sequence, the computer display a
+            small white color on the right side of the current guess.
+          </li>
+          <li>
+            For each color in your guess that is not the correct, the computer
+            displays a small black color on the right side of the guess.
+          </li>
+          <li>
+            You win the game when you manage to guess all the colors in the code
+            sequence and when they all in the right position.
+          </li>
+        </ul>
+      </div>
+      <div class="rules-container" style="margin-top: 20px;">
+        <h1>How to play the game</h1>
+        <ul>
+          <li>
+            Start a new game by clicking on the 'Start Game' button. If you wish
+            to change the default game parameters, you may change the 'Allow
+            duplicates' field before clicking on the 'Start Game' button.
+          </li>
+
+          <li>
+            To start filling a line, you must first select a color at the bottom
+            of the table by clicking on it. After selecting a color you can just
+            put it in the current guess line above by clicking on the desired
+            position.
+          </li>
+
+          <li>
+            After filling a whole line, you can still change your selection
+            before asking the computer to respond to your guess. When you're
+            satisfied with your guess, just click on the 'Check' button and get
+            the computer response.
+          </li>
+
+          <li>You have 10 attempts to guess the code sequence. Good Luck!</li>
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>
