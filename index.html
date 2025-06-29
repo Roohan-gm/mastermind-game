@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./game.css" />
     <title>MasterMind Game</title>
   </head>
   <body>
@@ -20,18 +21,28 @@
     </header>
     <main>
       <div class="main-container">
-        <h1>MasterMind Game</h1>
-
-        <a class="startBtn" href="./game.html">Start Game</a>
+        <h1>Mastermind Game</h1>
+        <div id="options">
+          <label>
+            <input type="checkbox" id="allow-duplicates" />
+            Allow duplicate colors in code
+          </label>
+        </div>
+        <button class="startBtn" id="start-game">Start Game</button>
         <p>
           Mastermind is a code-breaking game where one player (the code-maker)
           creates a secret code, and another player (the code-breaker) tries to
-          guess it. For this implementation, the computer will be the
-          code-maker, and the player will be the code-breaker.
+          guess it. In this implementation, the computer is the code-maker, and
+          you are the code-breaker. Crack the code in 10 attempts or less!
         </p>
       </div>
     </main>
 
-    <script src="index.js"></script>
+    <script>
+      document.getElementById("start-game").addEventListener("click", () => {
+        const allowDuplicates = document.getElementById("allow-duplicates").checked;
+        window.location.href = `./game.html?duplicates=${allowDuplicates}`;
+      });
+    </script>
   </body>
 </html>
