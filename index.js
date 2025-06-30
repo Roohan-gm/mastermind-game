@@ -11,10 +11,25 @@ const board = document.getElementById("board");
 const checkGuess = document.getElementById("check-guess");
 const newGame = document.getElementById("new-game");
 const message = document.getElementById("message");
+const duplicatesModal = document.getElementById("duplicates-modal");
+const modalYes = document.getElementById("modal-yes");
+const modalNo = document.getElementById("modal-no");
+
+function showDuplicatesModal(callback) {
+  duplicatesModal.style.display = "flex";
+  modalYes.onclick = () => {
+    duplicatesModal.style.display = "none";
+    callback(true);
+  };
+  modalNo.onclick = () => {
+    duplicatesModal.style.display = "none";
+    callback(false);
+  };
+}
 
 function initGame() {
   const urlParams = new URLSearchParams(window.location.search);
-  allowDup = urlParams.get('duplicates') === 'true';
+  allowDup = urlParams.get("duplicates") === "true";
   startGame();
 }
 
@@ -24,7 +39,8 @@ function startGame() {
   gameOver = false;
   message.textContent = "";
   checkGuess.disabled = true;
-  board.innerHTML = '<div class="row code-display"><span class="code-label">Secret Code:</span></div>';
+  board.innerHTML =
+    '<div class="row code-display"><span class="code-label">Secret Code:</span></div>';
   createBoard();
 
   const codeDisplayRow = board.querySelector(".code-display");
@@ -42,8 +58,10 @@ function startGame() {
   }
 
   newGame.addEventListener("click", () => {
-    allowDup = confirm("Do you want to allow duplicate colors in the secret code?");
-    startGame();
+    showDuplicatesModal((result) => {
+      allowDup = result;
+      startGame();
+    });
   });
   checkGuess.addEventListener("click", checkGuessClick);
   addColorChoiceListeners();
@@ -77,7 +95,9 @@ function addColorChoiceListeners() {
   document.querySelectorAll(".color-choice").forEach((choice) => {
     choice.addEventListener("click", () => {
       if (gameOver) return;
-      document.querySelectorAll(".color-choice").forEach((c) => c.classList.remove("selected"));
+      document
+        .querySelectorAll(".color-choice")
+        .forEach((c) => c.classList.remove("selected"));
       choice.classList.add("selected");
       selectedColor = choice.dataset.color;
     });
@@ -140,7 +160,9 @@ function checkGuessClick() {
     currentRow--;
     addPegListeners(currentRow);
     selectedColor = null;
-    document.querySelectorAll(".color-choice").forEach((c) => c.classList.remove("selected"));
+    document
+      .querySelectorAll(".color-choice")
+      .forEach((c) => c.classList.remove("selected"));
     checkSubmitButton();
   }
 }

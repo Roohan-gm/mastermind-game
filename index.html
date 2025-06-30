@@ -15,7 +15,6 @@
           style="background-color: hsl(37, 77%, 55%); font-weight: 800"
           >Home</a
         >
-        <a href="./game.html">Play</a>
         <a href="./rules.html">Rules</a>
       </nav>
     </header>
@@ -40,7 +39,8 @@
 
     <script>
       document.getElementById("start-game").addEventListener("click", () => {
-        const allowDuplicates = document.getElementById("allow-duplicates").checked;
+        const allowDuplicates =
+          document.getElementById("allow-duplicates").checked;
         window.location.href = `./game.html?duplicates=${allowDuplicates}`;
       });
     </script>
